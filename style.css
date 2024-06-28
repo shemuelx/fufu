@@ -1,0 +1,135 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap');
+
+:root {
+    --mobile-max-width: 37em;
+    --tablet-max-width: 42.5em;
+    --desktop-max-width: 45em;
+
+    --font-family: 'Inconsolata', Helvetica, monospace;
+    --title-font-size: 4em;
+    --subtitle-font-size: 1.8em;
+    --nav-font-size: 1.2em;
+    --content-font-size: 1.0.1em;
+    --footer-font-size: 0.8em;
+
+    --primary-color: #ffffff;
+    --secondary-color: #0c0f0a;
+    --accent-color: #FFB300;
+    --link-color: #0037B3;
+    --nav-border-color: #37303F;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--font-family);
+    line-height: 1.2;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--primary-color);
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+a,
+a:link {
+    outline: none;
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+h1,
+h2 {
+    color: var(--accent-color);
+    font-weight: 900;
+}
+
+h1 {
+    font-size: var(--title-font-size);
+}
+
+h2 {
+    font-size: var(--subtitle-font-size);
+    margin: 0.5em 0;
+}
+
+ol,
+ul,
+li,
+a,
+p {
+    font-size: var(--content-font-size);
+}
+
+.header,
+.container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: var(--mobile-max-width);
+    padding: 0 0.6250em;
+
+    @media only screen and (max-width: 64em) {
+        max-width: var(--tablet-max-width);
+        margin: 0 auto;
+    }
+
+    @media screen and (min-width: 64.5em) {
+        max-width: var(--desktop-max-width);
+        margin: 0 auto;
+    }
+}
+
+.header {
+    margin-top: 0.6250em;
+
+    .nav {
+        margin-top: 0.8em;
+        padding: 0.6em 0;
+        border-top: 0.1em solid var(--nav-border-color);
+        border-bottom: 0.1em solid var(--nav-border-color);
+
+        & li {
+            padding: 0.2em 0;
+        }
+    }
+}
+
+.container {
+    row-gap: 2em;
+
+    section:last-child {
+        margin-bottom: 2em;
+
+        a {
+            color: inherit;
+        }
+    }
+}
+
+.footer {
+    font-size: var(--footer-font-size);
+    text-align: center;
+    color: var(--secondary-color);
+
+    p {
+        padding: 1.8em 0;
+    }
+}
